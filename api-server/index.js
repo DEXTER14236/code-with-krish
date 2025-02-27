@@ -40,6 +40,14 @@ const port = 3000
                     });
 
 
+                    app.get('/number/assend', (req, res) => {
+                        const num = req.query.num ? req.query.num.split(",").map(Number) : [];
+                        
+                        const result = accendingordr(num);
+                    
+                        res.status(result.status).json(result.data);
+                    });
+
 
 
 
